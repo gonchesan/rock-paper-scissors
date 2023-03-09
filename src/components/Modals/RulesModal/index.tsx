@@ -1,11 +1,13 @@
 import React, { FC } from "react";
-import { RulesProps } from "../../model/RulesProps";
-import Modal from "../Modal";
-import RulesFive from "../../assets/images/rules-5.png";
-import RulesThree from "../../assets/images/rules-3.png";
 
-import "../../styles/Rules.scss";
-const Rules: FC<RulesProps> = ({ setModals, modals, mode }) => {
+import Modal from "../Modal";
+import { RulesProps } from "@/models/RulesProps";
+
+import RulesFive from "@/assets/images/rules-5.png";
+import RulesThree from "@/assets/images/rules-3.png";
+
+import "./styles.scss";
+const RulesModal: FC<RulesProps> = ({ setModals, modals, mode }) => {
   return (
     <Modal
       handleClose={() => setModals({ ...modals, rules: false })}
@@ -51,4 +53,4 @@ const Rules: FC<RulesProps> = ({ setModals, modals, mode }) => {
   );
 };
 
-export default Rules;
+export default RulesModal;

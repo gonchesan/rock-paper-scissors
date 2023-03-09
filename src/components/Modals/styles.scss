@@ -114,7 +114,7 @@
   .front {
     display: block;
     position: relative;
-    padding: 4px 10px;
+    padding: 3px 5px;
     border-radius: 2px;
     font-size: 1.1rem;
     color: white;
@@ -124,6 +124,16 @@
     will-change: transform;
     transform: translateY(-4px);
     transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+
+    & svg {
+      width: 18px;
+      height: 18px;
+      padding-top: 2px;
+
+      & path {
+        fill: #ffffff;
+      }
+    }
   }
   &:hover {
     filter: brightness(110%);

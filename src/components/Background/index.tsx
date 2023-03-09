@@ -1,10 +1,11 @@
-import "../styles/Background.scss";
+import { ChoicesIcons } from "@/models/Choices";
+
 import { ReactComponent as RockIcon } from "../assets/icons/rock.svg";
 import { ReactComponent as PaperIcon } from "../assets/icons/paper.svg";
 import { ReactComponent as ScissorsIcon } from "../assets/icons/scissors.svg";
 import { ReactComponent as LizardIcon } from "../assets/icons/lizard.svg";
 import { ReactComponent as SpockIcon } from "../assets/icons/spock.svg";
-import { ChoicesIcons } from "@/models/Choices";
+import "./styles.scss";
 
 const Background = () => {
   const choicesIcon: ChoicesIcons = {

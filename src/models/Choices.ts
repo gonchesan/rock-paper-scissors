@@ -1,6 +1,6 @@
 export interface Choice {
   name: string;
-  losesTo: string[];
+  loses: string[];
 }
 export type ListOfChoices = Choice[];
 export interface ChoicesIcons {

@@ -5,5 +5,5 @@ export interface BoardProps {
   choices: ListOfChoices;
   selectOption(index: string): void;
   openRulesModal: () => void;
-  restartGame: () => void;
+  restartGame: (selectMode: boolean) => void;
 }

@@ -1,5 +1,5 @@
-import { ChoicesIcons } from "./model/Choices";
-import { ResultOptions } from "./model/ResultOptions";
+import { ChoicesIcons, ListOfChoices } from "./models/Choices";
+import { ResultOptions } from "./models/ResultOptions";
 import RockIcon from "./assets/images/rock.png";
 import PaperIcon from "./assets/images/paper.png";
 import ScissorsIcon from "./assets/images/scissors.png";
@@ -19,3 +19,10 @@ export const CHOICESICONSTRING: ChoicesIcons = {
   lizard: LizardIcon,
   spock: SpockIcon,
 };
+export const CHOICESTOPLAY: ListOfChoices = [
+  { name: "rock", loses: ["paper", "spock"] },
+  { name: "paper", loses: ["scissors", "lizard"] },
+  { name: "scissors", loses: ["rock", "spock"] },
+  { name: "lizard", loses: ["rock", "scissors"] },
+  { name: "spock", loses: ["paper", "lizard"] },
+];

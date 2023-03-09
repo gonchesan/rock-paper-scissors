@@ -1,14 +1,15 @@
 import React, { FC } from "react";
-import { CHOICESICONSTRING, RESULTS } from "../../constants";
-import { ResultProps } from "../../model/ResultProps";
+
+import { ResultProps } from "@/models/ResultProps";
 import Modal from "../Modal";
 
-import "../../styles/Result.scss";
-const Result: FC<ResultProps> = ({
+import { CHOICESICONSTRING, RESULTS } from "@/constants";
+
+import "./styles.scss";
+const ResultModal: FC<ResultProps> = ({
   setModals,
   modals,
   result,
-  playAgain,
   restartGame,
   picks,
 }) => {
@@ -56,12 +57,15 @@ const Result: FC<ResultProps> = ({
         ) : null}
         {result === "lose" ? (
           <>
-            <div onClick={playAgain} className="button-wrapper">
+            <div onClick={() => restartGame(false)} className="button-wrapper">
               <button className="button--secondary">
                 <span className="edge"></span>
                 <span className="front text">Play Again</span>
               </button>
-              <button onClick={restartGame} className="button--primary">
+              <button
+                onClick={() => restartGame(true)}
+                className="button--primary"
+              >
                 <span className="edge"></span>
                 <span className="front text">Select Mode</span>
               </button>
@@ -73,4 +77,4 @@ const Result: FC<ResultProps> = ({
   );
 };
 
-export default Result;
+export default ResultModal;

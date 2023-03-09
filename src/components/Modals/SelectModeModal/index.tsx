@@ -1,10 +1,15 @@
 import { FC } from "react";
-import { SelectModeProps } from "../../model/SelectModeProps";
-import SwordIcon from "../../assets/images/sword.png";
-import Modal from "../Modal";
 
-import "../../styles/SelectMode.scss";
-const SelectMode: FC<SelectModeProps> = ({ setModals, modals, setMode }) => {
+import Modal from "../Modal";
+import { SelectModeProps } from "@/models/SelectModeProps";
+
+import SwordIcon from "@/assets/images/sword.png";
+import "./styles.scss";
+const SelectModeModal: FC<SelectModeProps> = ({
+  setModals,
+  modals,
+  setMode,
+}) => {
   return (
     <Modal
       handleClose={() => setModals({ ...modals, mode: false })}
@@ -36,4 +41,4 @@ const SelectMode: FC<SelectModeProps> = ({ setModals, modals, setMode }) => {
   );
 };
 
-export default SelectMode;
+export default SelectModeModal;

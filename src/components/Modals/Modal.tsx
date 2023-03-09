@@ -1,13 +1,11 @@
-import React, { useState, useEffect, FC } from "react";
-import "../styles/Modal.scss";
-import ReactPortal from "./ReactPortal";
+import React, { useEffect, FC } from "react";
 
-export interface ModalProps {
-  children: JSX.Element;
-  isOpen: boolean;
-  handleClose: () => void;
-  canClose: boolean;
-}
+import ReactPortal from "./ReactPortal";
+import { ModalProps } from "@/models/ModalProps";
+
+import { ReactComponent as Cross } from "@/assets/icons/cross.svg";
+import "./styles.scss";
+
 const Modal: FC<ModalProps> = ({ children, isOpen, handleClose, canClose }) => {
   useEffect(() => {
     const closeOnEscapeKey = (e: KeyboardEvent) =>
@@ -28,7 +26,9 @@ const Modal: FC<ModalProps> = ({ children, isOpen, handleClose, canClose }) => {
             <button onClick={handleClose} className="close-btn">
               <span className="shadow"></span>
               <span className="edge"></span>
-              <span className="front text">X</span>
+              <span className="front text">
+                <Cross />
+              </span>
             </button>
           ) : null}
 
@@ -40,9 +40,3 @@ const Modal: FC<ModalProps> = ({ children, isOpen, handleClose, canClose }) => {
 };
 
 export default Modal;
-
-{
-  /* <p>Select mode</p>
-<button onClick={() => setMode("normal")}>Normal</button>
-<button onClick={() => setMode("hard")}>Hard</button> */
-}

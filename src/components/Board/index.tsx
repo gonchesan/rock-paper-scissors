@@ -1,9 +1,12 @@
-import React, { FC } from "react";
-import { CHOICESICONSTRING } from "../constants";
-import { BoardProps } from "../model/BoardProps";
-import { Choice } from "../model/Choices";
+import { FC } from "react";
 
-import "../styles/Board.scss";
+import { BoardProps } from "@/models/BoardProps";
+import { Choice } from "@/models/Choices";
+import { CHOICESICONSTRING } from "@/constants";
+
+import { ReactComponent as ReturnIcon } from "@/assets/icons/return.svg";
+
+import "./styles.scss";
 
 const Board: FC<BoardProps> = ({
   mode,
@@ -41,9 +44,11 @@ const Board: FC<BoardProps> = ({
       </div>
 
       <div className="buttons-footer">
-        <button onClick={restartGame} className="button--primary">
+        <button onClick={() => restartGame(true)} className="button">
           <span className="edge"></span>
-          <span className="front text">Z</span>
+          <span className="front text">
+            <ReturnIcon />
+          </span>
         </button>
         <button onClick={openRulesModal} className="button--secondary">
           <span className="edge"></span>
