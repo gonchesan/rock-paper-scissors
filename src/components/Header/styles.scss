@@ -1,7 +1,9 @@
+@import "@/styles/rem.scss";
+
 .header {
   background-color: #354b70;
   border-bottom: 1px solid #010101;
-  padding: 8px 16px;
+  padding: rem(8px) rem(16px);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,17 +22,17 @@
     position: relative;
     & .icon {
       position: absolute;
-      left: -25px;
+      left: rem(-25px);
       margin: 0;
       padding: 0;
-      width: 40px;
-      height: 40px;
+      width: rem(40px);
+      height: rem(40px);
     }
     & .score-points {
       padding: 3px 13px 3px 28px;
       text-align: right;
       margin: 0px;
-      font-size: 16px;
+      font-size: rem(16px);
       background-color: #01010170;
       border-radius: 0px 999px 999px 0px;
       text-shadow: #010101 0px 3px, #010101 0px -1px, #010101 2px 0px,

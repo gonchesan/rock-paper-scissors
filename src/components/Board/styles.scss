@@ -1,3 +1,4 @@
+@import "@/styles/rem.scss";
 .container {
   height: calc(100vh - 42px);
   display: grid;
@@ -9,10 +10,10 @@
     place-content: center;
     // background-color: lightcoral;
     margin: 0 auto;
-    padding-bottom: 16px;
+    padding-bottom: rem(16px);
     grid-template-columns: repeat(5, 50px);
-    gap: 8px;
-    row-gap: 25px;
+    gap: rem(8px);
+    row-gap: rem(25px);
 
     & > :nth-child(1) {
       grid-area: 1 / 3 / 2 / 4;
@@ -33,8 +34,8 @@
 
   .button-circle {
     cursor: pointer;
-    width: 100px;
-    height: 100px;
+    width: rem(100px);
+    height: rem(100px);
     margin: 0 auto;
     border-radius: 50%;
     background: linear-gradient(#4a2b3d, #4a2b3d) padding-box,
@@ -44,8 +45,8 @@
 
     img {
       position: inherit;
-      width: 100px;
-      height: 100px;
+      width: rem(100px);
+      height: rem(100px);
       z-index: 65;
       transition: 0.4s all;
     }
@@ -54,14 +55,14 @@
   // Hexagon
   .button-action {
     cursor: pointer;
-    width: 100px;
-    height: 63px;
+    width: rem(100px);
+    height: rem(63px);
     margin: 0 auto;
 
     // background-color: #ffba28;
     background: linear-gradient(to left, #ffce4d 0%, #f4b23d 30%, #da7a14 80%);
 
-    border-radius: 10px;
+    border-radius: rem(10px);
     box-sizing: border-box;
     border: 0.4vh solid transparent;
     position: relative;

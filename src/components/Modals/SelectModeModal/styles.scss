@@ -1,15 +1,17 @@
+@import "@/styles/rem.scss";
+
 .select-mode {
   .modal__body {
-    margin-top: 32px;
+    margin-top: rem(32px);
   }
   .block-option {
     cursor: pointer;
     width: 100%;
     border-top: 2px solid #010101;
     border-bottom: 4px solid #010101;
-    height: 162px;
+    height: rem(162px);
     background-color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 12px;
+    margin-bottom: rem(12px);
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -18,23 +20,23 @@
     &__caption {
       display: flex;
       align-items: center;
-      padding: 0px 16px;
+      padding: 0px rem(16px);
       position: relative;
       .icon {
         position: absolute;
-        left: 5px;
+        left: rem(5px);
         margin: 0;
         padding: 0;
-        width: 40px;
-        height: 40px;
+        width: rem(40px);
+        height: rem(40px);
       }
       .number {
         text-align: right;
-        padding: 0px 16px;
+        padding: 0px rem(16px);
         margin: 0px;
-        margin-left: 14px;
-        min-width: 28px;
-        font-size: 14px;
+        margin-left: rem(14px);
+        min-width: rem(28px);
+        font-size: rem(14px);
         background-color: #01010170;
         border-radius: 0px 999px 999px 0px;
         text-shadow: #010101 0px 3px, #010101 0px -1px, #010101 2px 0px,
@@ -45,9 +47,9 @@
       }
     }
     &__title {
-      padding: 8px 16px;
+      padding: rem(8px) rem(16px);
       margin: 0px;
-      font-size: 18px;
+      font-size: rem(18px);
       text-shadow: #010101 0px 3px, #010101 0px -1px, #010101 2px 0px,
         #010101 -2px 0px;
       text-transform: uppercase;

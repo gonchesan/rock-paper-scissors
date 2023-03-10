@@ -1,3 +1,5 @@
+@import "@/styles/rem.scss";
+
 .modal {
   position: fixed;
   inset: 0;
@@ -9,13 +11,12 @@
   transition: all 0.3s ease-in-out;
   overflow: hidden;
   z-index: 999;
-  padding: 40px 20px 20px;
+  padding: rem(40px) rem(20px) rem(20px);
   &__body {
     position: relative;
     display: block;
     margin: 0;
-    // padding: 8px 16px;
-    font-size: 16px;
+    font-size: rem(16px);
     line-height: 1.75;
   }
   &__footer {
@@ -25,23 +26,23 @@
     justify-content: flex-end;
     width: 100%;
     margin: 0;
-    padding: 10px 0 0;
+    padding-top: rem(10px);
   }
   &__header {
     position: relative;
     background-color: #293757;
     width: 100%;
-    height: 44px;
-    border-radius: 20px 20px 0 0;
+    height: rem(44px);
+    border-radius: rem(20px) rem(20px) 0 0;
     display: block;
-    padding-bottom: 30px;
+    padding-bottom: rem(30px);
     p {
-      padding: 8px 24px;
+      padding: rem(8px) rem(24px);
       text-transform: uppercase;
       font-weight: bold;
       text-shadow: #010101 0px 3px, #010101 0px -1px, #010101 2px 0px,
         #010101 -2px 0px;
-      font-size: 24px;
+      font-size: rem(24px);
       margin: 0;
     }
     &:after {
@@ -49,7 +50,7 @@
       position: absolute;
       background-color: #1f2940;
       width: 100%;
-      height: 32px;
+      height: rem(32px);
       border-bottom: 5px solid #0a121f;
     }
   }
@@ -60,7 +61,7 @@
     height: auto;
     min-height: 90%;
     background-color: #293757;
-    border-radius: 20px;
+    border-radius: rem(20px);
     box-shadow: #010101 0px -1px 0px 2px, #010101 0px 1px 0px 4px;
     color: #fff;
     z-index: 1000;
@@ -68,8 +69,8 @@
 }
 .close-btn {
   position: absolute;
-  top: -8px;
-  right: -8px;
+  top: rem(-8px);
+  right: rem(-8px);
   z-index: 1000;
   border: none;
   background-color: transparent;
@@ -79,7 +80,6 @@
   transition: filter 250ms;
   user-select: none;
   touch-action: manipulation;
-  // border: 2px solid #010101;
   box-shadow: #010101 0px 1px 0px 2px;
   border-radius: 2px;
   .shadow {
@@ -116,7 +116,7 @@
     position: relative;
     padding: 3px 5px;
     border-radius: 2px;
-    font-size: 1.1rem;
+    font-size: rem(17.6px);
     color: white;
     background-color: #dd396c;
     box-shadow: #010101 0px -0.5px 0px 1.5px;
@@ -126,8 +126,8 @@
     transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 
     & svg {
-      width: 18px;
-      height: 18px;
+      width: rem(18px);
+      height: rem(18px);
       padding-top: 2px;
 
       & path {
@@ -163,10 +163,10 @@
 
 .button-wrapper {
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: rem(40px);
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 24px;
+  row-gap: rem(24px);
   max-width: 80%;
 }
