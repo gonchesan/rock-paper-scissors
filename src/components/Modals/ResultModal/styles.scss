@@ -6,11 +6,11 @@
     display: flex;
     justify-content: center;
     margin-top: rem(52px);
-    column-gap: rem(32px);
+    column-gap: rem(16px);
 
     .option-picked {
-      width: rem(132px);
-      height: rem(182px);
+      width: rem(112px);
+      height: rem(162px);
       box-shadow: #010101 0px 1px 0px 2px;
       background: radial-gradient(transparent, transparent);
       border: 2px solid transparent;
@@ -90,8 +90,10 @@
 
   .modal__tooltip {
     position: sticky;
-    padding: rem(8px) rem(24px);
+    padding: rem(12px) rem(24px);
+
     text-transform: uppercase;
+    margin-top: rem(12px);
     background-color: #01010170;
     text-align: center;
     text-shadow: #010101 0px 3px, #010101 0px -1px, #010101 2px 0px,
@@ -99,7 +101,7 @@
     font-size: 12px;
     display: block;
     color: #b85aff;
-    z-index: 3;
+    z-index: -3;
   }
 }
 
@@ -111,4 +113,21 @@
   align-items: center;
   row-gap: rem(24px);
   max-width: 80%;
+}
+
+@media (min-width: 426px) {
+  .result-modal {
+    .options-wrapper {
+      column-gap: rem(32px);
+
+      .option-picked {
+        width: rem(132px);
+        height: rem(182px);
+      }
+    }
+    .modal__tooltip {
+      margin-top: 0px;
+      padding: rem(8px) rem(24px);
+    }
+  }
 }

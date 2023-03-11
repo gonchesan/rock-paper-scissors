@@ -2,8 +2,8 @@
 
 .button-action {
   cursor: pointer;
-  width: rem(100px);
-  height: rem(63px);
+  width: rem(80px);
+  height: rem(50px);
   margin: 0 auto;
   background: linear-gradient(to left, #ffce4d 0%, #f4b23d 30%, #da7a14 80%);
   border-radius: rem(10px);
@@ -42,7 +42,7 @@
 
   &__edge {
     @extend .button-action;
-    transform: scale(0.8);
+    transform: scale(0.82) translate(-1px, -1px);
     background: none;
     background-color: #2d4d84;
     z-index: 60;
@@ -62,8 +62,8 @@
 
     img {
       position: inherit;
-      width: 152px;
-      height: 152px;
+      width: rem(132px);
+      height: rem(132px);
       transition: 0.3s all;
       z-index: 65;
     }
@@ -111,6 +111,19 @@
         img {
           filter: drop-shadow(0px 0px 4px #9841ff);
         }
+      }
+    }
+  }
+}
+@media (min-width: 426px) {
+  .button-action {
+    width: rem(100px);
+    height: rem(63px);
+    &__edge {
+      transform: scale(0.8);
+      img {
+        width: rem(152px);
+        height: rem(152px);
       }
     }
   }

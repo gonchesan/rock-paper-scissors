@@ -8,8 +8,8 @@
     cursor: pointer;
     width: 100%;
     border-top: 2px solid #010101;
-    border-bottom: 4px solid #010101;
-    height: rem(194px);
+    border-bottom: 2px solid #010101;
+    height: rem(144px);
     background-color: rgba(255, 255, 255, 0.5);
     margin-bottom: rem(12px);
     display: flex;
@@ -37,8 +37,8 @@
         left: rem(5px);
         margin: 0;
         padding: 0;
-        width: rem(40px);
-        height: rem(40px);
+        width: rem(35px);
+        height: rem(35px);
       }
       .number {
         text-align: right;
@@ -65,10 +65,33 @@
       text-transform: uppercase;
       font-weight: bold;
       color: #fefaf6;
+      max-width: rem(150px);
+      text-align: right;
+      margin-right: rem(4px);
     }
     &:active {
       transform: translateY(1px);
       transition: 0.3s all;
+    }
+  }
+}
+
+@media (min-width: 426px) {
+  .select-mode-modal {
+    .block-option {
+      height: rem(194px);
+      border-bottom: 4px solid #010101;
+      &__caption {
+        .icon {
+          width: rem(40px);
+          height: rem(40px);
+        }
+      }
+      &__title {
+        font-size: rem(18px);
+        max-width: none;
+        margin-right: 0px;
+      }
     }
   }
 }

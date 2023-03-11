@@ -11,22 +11,6 @@
   padding: 0;
   margin: 0;
 }
-
-.buttons-footer {
-  position: fixed;
-  bottom: rem(24px);
-  right: rem(24px);
-  display: flex;
-  gap: 16px;
-
-  & svg {
-    & path {
-      fill: #ffffff;
-      box-shadow: 0px 1px 1px 1px #010101;
-    }
-  }
+.app {
+  overflow: hidden;
 }
-
-// Easing
-$ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
-$ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);

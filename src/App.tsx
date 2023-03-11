@@ -73,7 +73,7 @@ const App = () => {
   }, [computerPick, playerPick]);
 
   return (
-    <>
+    <div className="app">
       {!mode ? <Background /> : null}
       {!mode ? (
         <SelectModeModal
@@ -107,7 +107,7 @@ const App = () => {
       {modals.rules ? (
         <RulesModal setModals={setModals} modals={modals} mode={mode} />
       ) : null}
-    </>
+    </div>
   );
 };
 
