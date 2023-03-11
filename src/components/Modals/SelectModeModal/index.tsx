@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Modal from "../Modal";
 import { SelectModeProps } from "@/models/SelectMode";
 
@@ -14,7 +15,12 @@ const SelectModeModal: React.FC<SelectModeProps> = ({
       isOpen={modals.mode}
       canClose={false}
     >
-      <div className="select-mode-modal">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="select-mode-modal"
+      >
         <div className="modal__header">
           <p className="title">Select mode</p>
         </div>
@@ -40,7 +46,7 @@ const SelectModeModal: React.FC<SelectModeProps> = ({
             <p className="block-option__title">Experimental mode</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </Modal>
   );
 };

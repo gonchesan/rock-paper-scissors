@@ -1,3 +1,5 @@
+import { motion, Variants } from "framer-motion";
+
 import Modal from "../Modal";
 import { RulesProps } from "@/models/Rules";
 import { DescriptionOptions } from "@/models/DescriptionOptions";
@@ -34,6 +36,27 @@ const RulesModal: React.FC<RulesProps> = ({ setModals, modals, mode }) => {
     },
   };
 
+  const motionList = {
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      transition: {
+        when: "afterChildren",
+      },
+    },
+  };
+
+  const motionItem = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -100 },
+  };
+
   return (
     <Modal
       handleClose={() => setModals({ ...modals, rules: false })}
@@ -47,19 +70,31 @@ const RulesModal: React.FC<RulesProps> = ({ setModals, modals, mode }) => {
         <div className="modal__body rules-modal">
           {mode ? (
             <>
-              <img
+              <motion.img
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
                 className="rules-modal__image"
                 src={description.image[mode]}
                 alt="rules instructions"
               />
               <div className="rules-modal__description">
-                <ul className="rules-modal__list">
+                <motion.ul
+                  initial="hidden"
+                  animate="visible"
+                  variants={motionList}
+                  className="rules-modal__list"
+                >
                   {description.text[mode].map((rule: string) => (
-                    <li className="rules-modal__item" key={rule}>
+                    <motion.li
+                      variants={motionItem}
+                      className="rules-modal__item"
+                      key={rule}
+                    >
                       {rule}
-                    </li>
+                    </motion.li>
                   ))}
-                </ul>
+                </motion.ul>
               </div>
             </>
           ) : null}

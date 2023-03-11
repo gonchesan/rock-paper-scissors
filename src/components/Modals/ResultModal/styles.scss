@@ -1,6 +1,7 @@
 @import "@/styles/rem.scss";
 
 .result-modal {
+  height: 100%;
   .options-wrapper {
     display: flex;
     justify-content: center;
@@ -88,7 +89,6 @@
   }
 
   .modal__tooltip {
-    cursor: pointer;
     position: sticky;
     padding: rem(8px) rem(24px);
     text-transform: uppercase;
