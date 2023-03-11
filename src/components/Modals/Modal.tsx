@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import ReactPortal from "./ReactPortal";
-import { ModalProps } from "@/models/Modal";
+import { ModalProps } from "@/models/Modals";
 
 import Button from "@/components/Button";
 import { ReactComponent as Cross } from "@/assets/icons/cross.svg";
