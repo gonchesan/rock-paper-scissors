@@ -60,6 +60,7 @@ const ResultModal: React.FC<ResultProps> = ({
           <motion.div variants={motionItem} className="option-picked--primary">
             <p className="option-picked__caption">Player 1</p>
             <img
+              loading="lazy"
               className="option-picked__image"
               src={CHOICESICONSTRING[picks.playerPick]}
             />
@@ -70,6 +71,7 @@ const ResultModal: React.FC<ResultProps> = ({
           >
             <p className="option-picked__caption">Computer</p>
             <img
+              loading="lazy"
               className="option-picked__image"
               src={CHOICESICONSTRING[picks.computerPick]}
             />

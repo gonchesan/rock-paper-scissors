@@ -71,6 +71,7 @@ const RulesModal: React.FC<RulesProps> = ({ setModals, modals, mode }) => {
           {mode ? (
             <>
               <motion.img
+                loading="lazy"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}

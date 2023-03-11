@@ -17,7 +17,11 @@ const OctogonalButton: React.FC<OctogonalButtonProps> = ({
       onClick={() => selectOption(optionName)}
     >
       <div className={`button-action__edge--${optionName}`}>
-        <img src={CHOICESICONSTRING[optionName]} alt={optionName} />
+        <img
+          loading="lazy"
+          src={CHOICESICONSTRING[optionName]}
+          alt={optionName}
+        />
       </div>
     </motion.div>
   );

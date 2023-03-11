@@ -8,7 +8,12 @@ const Header: React.FC<HeaderProps> = ({ mode, score }) => {
     <div className="header">
       <h3 className="header__title">{mode} mode</h3>
       <div className="header__score">
-        <img className="icon" src={TrophyIcon} alt="trophy icon" />
+        <img
+          loading="lazy"
+          className="icon"
+          src={TrophyIcon}
+          alt="trophy icon"
+        />
         <p className="score-points">{score}</p>
       </div>
     </div>

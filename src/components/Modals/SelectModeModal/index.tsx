@@ -30,7 +30,12 @@ const SelectModeModal: React.FC<SelectModeProps> = ({
             onClick={() => setMode("classic")}
           >
             <p className="block-option__caption">
-              <img className="icon" src={SwordIcon} alt="sword icon" />
+              <img
+                loading="lazy"
+                className="icon"
+                src={SwordIcon}
+                alt="sword icon"
+              />
               <span className="number">3</span>
             </p>
             <p className="block-option__title">Classic mode</p>
@@ -40,7 +45,12 @@ const SelectModeModal: React.FC<SelectModeProps> = ({
             onClick={() => setMode("experimental")}
           >
             <p className="block-option__caption">
-              <img className="icon" src={SwordIcon} alt="sword icon" />
+              <img
+                loading="lazy"
+                className="icon"
+                src={SwordIcon}
+                alt="sword icon"
+              />
               <span className="number">5</span>
             </p>
             <p className="block-option__title">Experimental mode</p>
