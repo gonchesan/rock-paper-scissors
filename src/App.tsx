@@ -6,6 +6,7 @@ import Background from "@/components/Background";
 import SelectModeModal from "@/components/Modals/SelectModeModal";
 import ResultModal from "@/components/Modals/ResultModal";
 import RulesModal from "@/components/Modals/RulesModal";
+import Footer from "./components/Footer";
 
 import { CHOICESTOPLAY } from "./constants";
 import { Choice } from "@/models/Choices";
@@ -28,7 +29,7 @@ const App = () => {
 
   function getRandomChoice() {
     let newChoice;
-    if (mode === "normal") {
+    if (mode === "classic") {
       newChoice =
         CHOICESTOPLAY[Math.floor(Math.random() * (CHOICESTOPLAY.length - 2))];
     } else {
@@ -74,7 +75,6 @@ const App = () => {
   return (
     <>
       {!mode ? <Background /> : null}
-      <Header mode={mode} score={score} />
       {!mode ? (
         <SelectModeModal
           setModals={setModals}
@@ -82,13 +82,15 @@ const App = () => {
           setMode={setMode}
         />
       ) : (
-        <Board
-          mode={mode}
-          choices={CHOICESTOPLAY}
-          selectOption={selectOption}
-          openRulesModal={openRuleModal}
-          restartGame={restartGame}
-        />
+        <>
+          <Header mode={mode} score={score} />
+          <Board
+            mode={mode}
+            choices={CHOICESTOPLAY}
+            selectOption={selectOption}
+          />
+          <Footer restartGame={restartGame} openRulesModal={openRuleModal} />
+        </>
       )}
       {playerPick && computerPick ? (
         <ResultModal
