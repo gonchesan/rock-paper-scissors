@@ -1,6 +1,6 @@
 @import "@/styles/rem.scss";
 
-.select-mode {
+.select-mode-modal {
   .modal__body {
     margin-top: rem(32px);
   }
@@ -9,13 +9,23 @@
     width: 100%;
     border-top: 2px solid #010101;
     border-bottom: 4px solid #010101;
-    height: rem(162px);
+    height: rem(194px);
     background-color: rgba(255, 255, 255, 0.5);
     margin-bottom: rem(12px);
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     box-shadow: #010101 2px 0px, #010101 -2px 0px;
+    &.classic {
+      background-position: center;
+      background-size: cover;
+      background-image: url("/src/assets/images/classic-mode.jpeg");
+    }
+    &.experimental {
+      background-position: center;
+      background-size: cover;
+      background-image: url("/src/assets/images/experimental-mode.jpg");
+    }
 
     &__caption {
       display: flex;

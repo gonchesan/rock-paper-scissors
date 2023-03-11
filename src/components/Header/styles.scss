@@ -1,12 +1,28 @@
 @import "@/styles/rem.scss";
 
 .header {
-  background-color: #354b70;
-  border-bottom: 1px solid #010101;
-  padding: rem(8px) rem(16px);
+  background-color: #293757;
+  border-bottom: 3px solid #0f151f;
+  padding: rem(20px) rem(24px);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: rem(10px);
+    bottom: 0px;
+    left: 0;
+    background-color: #1f2940;
+  }
+
   &__title {
     padding: 0px;
     margin: 0px;

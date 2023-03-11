@@ -1,13 +1,39 @@
-import React, { FC } from "react";
-
 import Modal from "../Modal";
-import { RulesProps } from "@/models/RulesProps";
+import { RulesProps } from "@/models/Rules";
+import { DescriptionOptions } from "@/models/DescriptionOptions";
 
 import RulesFive from "@/assets/images/rules-5.png";
 import RulesThree from "@/assets/images/rules-3.png";
 
 import "./styles.scss";
-const RulesModal: FC<RulesProps> = ({ setModals, modals, mode }) => {
+
+const RulesModal: React.FC<RulesProps> = ({ setModals, modals, mode }) => {
+  const description: DescriptionOptions = {
+    text: {
+      classic: [
+        "Scissors cut paper",
+        "Paper covers rock",
+        "Rock breaks scissors",
+      ],
+      experimental: [
+        "Scissors cut paper",
+        "Paper covers rock",
+        "Rock crushes lizard",
+        "Lizard poisons Spock",
+        "Spock smashes (or melts) scissors",
+        "Scissors decapitate lizard",
+        "Lizard eats paper",
+        "Paper disproves Spock",
+        "Spock vaporizes rock",
+        "Rock breaks scissors",
+      ],
+    },
+    image: {
+      classic: RulesThree,
+      experimental: RulesFive,
+    },
+  };
+
   return (
     <Modal
       handleClose={() => setModals({ ...modals, rules: false })}
@@ -16,37 +42,27 @@ const RulesModal: FC<RulesProps> = ({ setModals, modals, mode }) => {
     >
       <>
         <div className="modal__header">
-          <p>Rules</p>
+          <p className="title">Rules</p>
         </div>
-        <div className="modal__body rules">
-          {mode !== "normal" ? (
+        <div className="modal__body rules-modal">
+          {mode ? (
             <>
               <img
-                className="rules__image"
-                src={RulesFive}
+                className="rules-modal__image"
+                src={description.image[mode]}
                 alt="rules instructions"
               />
-              <p className="rules__description">
-                Scissors cuts paper, paper covers rock, rock crushes lizard,
-                lizard poisons Spock, Spock smashes scissors, scissors
-                decapitates lizard, lizard eats paper, paper disproves Spock,
-                Spock vaporizes rock, and as it always has, rock crushes
-                scissors.
-              </p>
+              <div className="rules-modal__description">
+                <ul className="rules-modal__list">
+                  {description.text[mode].map((rule: string) => (
+                    <li className="rules-modal__item" key={rule}>
+                      {rule}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </>
-          ) : (
-            <>
-              <img
-                className="rules__image"
-                src={RulesThree}
-                alt="rules instructions"
-              />
-              <p className="rules__description">
-                Rock wins against scissors; paper wins against rock; and
-                scissors wins against paper.
-              </p>
-            </>
-          )}
+          ) : null}
         </div>
       </>
     </Modal>

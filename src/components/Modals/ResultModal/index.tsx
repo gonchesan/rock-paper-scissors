@@ -1,12 +1,13 @@
-import React, { FC } from "react";
+import { ResultProps } from "@/models/Result";
 
-import { ResultProps } from "@/models/ResultProps";
 import Modal from "../Modal";
+import Button from "@/components/Button";
+import Ribbon from "@/components/Ribbon";
 
-import { CHOICESICONSTRING, RESULTS } from "@/constants";
+import { CHOICESICONSTRING } from "@/constants";
 
 import "./styles.scss";
-const ResultModal: FC<ResultProps> = ({
+const ResultModal: React.FC<ResultProps> = ({
   setModals,
   modals,
   result,
@@ -21,32 +22,28 @@ const ResultModal: FC<ResultProps> = ({
     >
       <div className="result-modal">
         <div className="modal__header">
-          <p>{result === "lose" ? "Game over" : "Standby Phase"}</p>
+          <p className="title">
+            {result === "lose" ? "Game over" : "Standby Phase"}
+          </p>
         </div>
         <div className="options-wrapper">
           <div className="option-picked--primary">
-            <p className="option-picked__banner">Player 1</p>
+            <p className="option-picked__caption">Player 1</p>
             <img
-              className="option-picked__choice"
+              className="option-picked__image"
               src={CHOICESICONSTRING[picks.playerPick]}
             />
           </div>
           <div className="option-picked--secondary">
-            <p className="option-picked__banner">Computer</p>
+            <p className="option-picked__caption">Computer</p>
             <img
-              className="option-picked__choice"
+              className="option-picked__image"
               src={CHOICESICONSTRING[picks.computerPick]}
             />
           </div>
         </div>
-        <div className={`ribbon${result === "win" ? "--won" : ""}`}>
-          <i></i>
-          <i></i>
-          <i></i>
-          <i></i>
-          <span className="ribbon-top"></span>
-          <p> {RESULTS[result]}</p>
-        </div>
+
+        <Ribbon result={result} />
         {result === "win" || result === "draw" ? (
           <span
             className="modal__tooltip"
@@ -57,18 +54,13 @@ const ResultModal: FC<ResultProps> = ({
         ) : null}
         {result === "lose" ? (
           <>
-            <div onClick={() => restartGame(false)} className="button-wrapper">
-              <button className="button--secondary">
-                <span className="edge"></span>
-                <span className="front text">Play Again</span>
-              </button>
-              <button
-                onClick={() => restartGame(true)}
-                className="button--primary"
-              >
-                <span className="edge"></span>
-                <span className="front text">Select Mode</span>
-              </button>
+            <div className="button-wrapper">
+              <Button className="secondary" onClick={() => restartGame(false)}>
+                Play Again
+              </Button>
+              <Button className="primary" onClick={() => restartGame(true)}>
+                Select Mode
+              </Button>
             </div>
           </>
         ) : null}

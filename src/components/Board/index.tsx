@@ -1,59 +1,30 @@
-import { FC } from "react";
-
-import { BoardProps } from "@/models/BoardProps";
+import { BoardProps } from "@/models/Board";
 import { Choice } from "@/models/Choices";
 import { CHOICESICONSTRING } from "@/constants";
 
-import { ReactComponent as ReturnIcon } from "@/assets/icons/return.svg";
-
 import "./styles.scss";
+import OctogonalButton from "../OctogonalButton";
+import { useEffect, useState } from "react";
 
-const Board: FC<BoardProps> = ({
-  mode,
-  choices,
-  selectOption,
-  openRulesModal,
-  restartGame,
-}) => {
+const Board: React.FC<BoardProps> = ({ mode, choices, selectOption }) => {
+  const [optionsToRender, setOptionsToRender] = useState<Choice[]>(choices);
+
+  useEffect(() => {
+    mode === "classic"
+      ? setOptionsToRender(choices.slice(0, 3))
+      : setOptionsToRender(choices);
+  }, [mode]);
+
   return (
-    <div className="container">
-      <div className="board">
-        {mode === "normal"
-          ? choices.slice(0, 3).map((option: Choice) => (
-              <div
-                className="button-action"
-                onClick={() => selectOption(option.name)}
-                key={option.name}
-              >
-                <div className="button-action__edge">
-                  <img src={CHOICESICONSTRING[option.name]} alt={option.name} />
-                </div>
-              </div>
-            ))
-          : choices.map((option: Choice) => (
-              <div
-                className="button-action"
-                onClick={() => selectOption(option.name)}
-                key={option.name}
-              >
-                <div className={`button-action__edge--${option.name}`}>
-                  <img src={CHOICESICONSTRING[option.name]} alt={option.name} />
-                </div>
-              </div>
-            ))}
-      </div>
-
-      <div className="buttons-footer">
-        <button onClick={() => restartGame(true)} className="button">
-          <span className="edge"></span>
-          <span className="front text">
-            <ReturnIcon />
-          </span>
-        </button>
-        <button onClick={openRulesModal} className="button--secondary">
-          <span className="edge"></span>
-          <span className="front text">Rules</span>
-        </button>
+    <div className="board">
+      <div className="board__pieces">
+        {optionsToRender.map((option: Choice) => (
+          <OctogonalButton
+            key={option.name}
+            optionName={option.name}
+            selectOption={selectOption}
+          />
+        ))}
       </div>
     </div>
   );
