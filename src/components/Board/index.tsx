@@ -1,10 +1,11 @@
+import { useEffect, useState } from "react";
+
+import OctogonalButton from "@/components/OctogonalButton";
+
 import { BoardProps } from "@/models/Board";
 import { Choice } from "@/models/Choices";
-import { CHOICESICONSTRING } from "@/utils/constants";
 
 import "./styles.scss";
-import OctogonalButton from "../OctogonalButton";
-import { useEffect, useState } from "react";
 
 const Board: React.FC<BoardProps> = ({ mode, choices, selectOption }) => {
   const [optionsToRender, setOptionsToRender] = useState<Choice[]>(choices);

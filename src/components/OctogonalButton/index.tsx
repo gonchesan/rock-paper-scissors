@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
+
 import { CHOICESICONSTRING } from "@/utils/constants";
+
 import { OctogonalButtonProps } from "@/models/OctogonalButton";
 
 import "./styles.scss";

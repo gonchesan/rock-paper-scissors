@@ -1,10 +1,12 @@
-import { ResultProps } from "@/models/Result";
 import { motion } from "framer-motion";
+
 import Modal from "../Modal";
 import Button from "@/components/Button";
 import Ribbon from "@/components/Ribbon";
 
 import { CHOICESICONSTRING } from "@/utils/constants";
+
+import { ResultProps } from "@/models/Result";
 
 import "./styles.scss";
 const ResultModal: React.FC<ResultProps> = ({

@@ -1,5 +1,6 @@
 import { ChoicesIcons, ListOfChoices } from "@/models/Choices";
 import { ResultOptions } from "@/models/ResultOptions";
+
 import RockIcon from "@/assets/images/rock.png";
 import PaperIcon from "@/assets/images/paper.png";
 import ScissorsIcon from "@/assets/images/scissors.png";

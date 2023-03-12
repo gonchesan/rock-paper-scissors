@@ -1,4 +1,5 @@
 import { RESULTS } from "@/utils/constants";
+
 import { RibbonProps } from "@/models/Ribbon";
 
 import "./styles.scss";
