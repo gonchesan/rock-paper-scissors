@@ -6,21 +6,23 @@ import Background from "@/components/Background";
 import SelectModeModal from "@/components/Modals/SelectModeModal";
 import ResultModal from "@/components/Modals/ResultModal";
 import RulesModal from "@/components/Modals/RulesModal";
-import Footer from "./components/Footer";
+import Footer from "@/components/Footer";
 
-import { CHOICESTOPLAY } from "./constants";
+import { CHOICESTOPLAY } from "@/utils/constants";
+import useLocalStorage from "@/utils/useLocalStorage";
+
 import { Choice } from "@/models/Choices";
-
 import { Modals } from "@/models/Modals";
 
 import "./App.scss";
 
 const App = () => {
-  const [score, setScore] = useState<number>(0);
+  const [score, setScore] = useLocalStorage("score", 0);
+  const [mode, setMode] = useLocalStorage("mode", null);
+
   const [result, setResult] = useState<string>("");
   const [playerPick, setPlayerPick] = useState<Choice | null>();
   const [computerPick, setComputerPick] = useState<Choice | null>();
-  const [mode, setMode] = useState<null | string>(null);
   const [modals, setModals] = useState<Modals>({
     mode: true,
     result: false,
@@ -62,7 +64,10 @@ const App = () => {
     setComputerPick(null);
     setResult("");
     setScore(0);
-    if (selectMode) setMode(null);
+    if (selectMode) {
+      setMode(null);
+      window.localStorage.clear();
+    }
   }
 
   function openRuleModal() {

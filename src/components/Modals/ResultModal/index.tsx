@@ -4,7 +4,7 @@ import Modal from "../Modal";
 import Button from "@/components/Button";
 import Ribbon from "@/components/Ribbon";
 
-import { CHOICESICONSTRING } from "@/constants";
+import { CHOICESICONSTRING } from "@/utils/constants";
 
 import "./styles.scss";
 const ResultModal: React.FC<ResultProps> = ({
@@ -80,7 +80,7 @@ const ResultModal: React.FC<ResultProps> = ({
 
         <Ribbon result={result} />
         {result === "win" || result === "draw" ? (
-          <span className="modal__tooltip">Click anywher to keep playing</span>
+          <span className="modal__tooltip">Click anywhere to continue</span>
         ) : null}
         {result === "lose" ? (
           <>

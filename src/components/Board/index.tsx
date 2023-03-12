@@ -1,6 +1,6 @@
 import { BoardProps } from "@/models/Board";
 import { Choice } from "@/models/Choices";
-import { CHOICESICONSTRING } from "@/constants";
+import { CHOICESICONSTRING } from "@/utils/constants";
 
 import "./styles.scss";
 import OctogonalButton from "../OctogonalButton";
